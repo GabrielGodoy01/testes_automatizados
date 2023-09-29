@@ -1,0 +1,19 @@
+name: Testes Automatizados
+
+jobs:
+  testes:
+    name: Testes TDD
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Código
+      uses: actions/checkout@v2
+
+    - name: Configurar Python
+      uses: actions/setup-python@v2
+    
+    - name: Instalar dependencias
+      run: pip install pytest
+    
+    - name: Rodar pytest
+      run: pytest
